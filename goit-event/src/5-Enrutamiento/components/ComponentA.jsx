@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const ComponentA = () => {
   const dataUser = {
@@ -7,13 +7,17 @@ export const ComponentA = () => {
     email: "oso91@gmail.com",
   };
 
-  const btnHandler = (e) => {
-    console.log(e)
-  } 
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/login/subpage', { state: { dataUser } });
+  };
 
   return (
-    <Link to={"/login"} state={dataUser}>
-      <button onClick={btnHandler} className="btn btn-outline-primary">Pasar dataUser</button>
-    </Link>
+    <button 
+      onClick={handleButtonClick}
+      className="btn btn-outline-primary">
+      Pasar dataUser
+    </button>
   );
 };

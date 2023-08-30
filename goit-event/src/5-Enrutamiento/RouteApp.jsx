@@ -5,15 +5,17 @@ import LandingPage from "./pages/LandingPage";
 import UserDashboard from "./pages/UserDashboard";
 import LoginPage from "./pages/LoginPage";
 import Navbar from "./components/Navbar";
-
+import SubPage from "./pages/Subpage";
 
 const RouteApp = () => {
-  return <div>
+  return (<div>
     <Navbar />
     <hr />
     <Routes>
       <Route path="/" element={ <LandingPage /> }/>
-      <Route path="login" element={ <LoginPage /> } />
+      <Route path="login" element={<LoginPage />}>
+        <Route path="subpage" element={<SubPage />} />
+      </Route>
       <Route path="user/:role_code/:id">
         <Route path="dashboard"  element={ <UserDashboard /> } />
       </Route>
@@ -21,7 +23,7 @@ const RouteApp = () => {
       <Route path="user-dashboard" element={ <UserDashboard /> } />
       <Route path="/*" element={ <Error404 /> } />
     </Routes>
-  </div>;
+  </div>);
 };
 
 export default RouteApp;
