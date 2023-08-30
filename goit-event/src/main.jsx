@@ -5,13 +5,16 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import RouteApp from './5-Enrutamiento/RouteApp'
 import { UserProvider } from './context/UserProvider'
+import { LazyApp } from './6. Lazy & Suspense/LazyApp'
+import { CirclesWithBar } from 'react-loader-spinner'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter> {/* Componente de nivel superior(Higher order component) */}
+    {/* <BrowserRouter> 
       <UserProvider>
         <RouteApp />
       </UserProvider>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    <LazyApp />
   </React.StrictMode>,
 )
