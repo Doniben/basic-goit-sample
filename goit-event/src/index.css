@@ -63,6 +63,11 @@ a {
   margin-right: 5px;
 }
 
+
+.text-decoration-line-through {
+  text-decoration: line-through !important ;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
