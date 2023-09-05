@@ -8,6 +8,7 @@ import { UserProvider } from './context/UserProvider'
 import { LazyApp } from './6. Lazy & Suspense/LazyApp'
 import { CirclesWithBar } from 'react-loader-spinner'
 import { TaskApp } from './6.-useReducer/TaskApp'
+import { TaskProvider } from './6.-useReducer/context/TaskProvider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,6 +17,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <RouteApp />
       </UserProvider>
     </BrowserRouter> */}
-    <TaskApp />
+    <TaskProvider>
+      <TaskApp />
+    </TaskProvider>
   </React.StrictMode>,
 )

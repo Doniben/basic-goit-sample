@@ -19,6 +19,7 @@ export const taskReducer = (initialState = [], action) => {
                         done: !task.done
                     }
                 }
+                return { ...task }
             })
     
     }
