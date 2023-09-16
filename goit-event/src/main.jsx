@@ -9,16 +9,14 @@ import { LazyApp } from './6. Lazy & Suspense/LazyApp'
 import { CirclesWithBar } from 'react-loader-spinner'
 import { TaskApp } from './6.-useReducer/TaskApp'
 import { TaskProvider } from './6.-useReducer/context/TaskProvider'
+import { CounterReduxApp } from './CounterReduxApp'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <BrowserRouter> 
-      <UserProvider>
-        <RouteApp />
-      </UserProvider>
-    </BrowserRouter> */}
-    <TaskProvider>
-      <TaskApp />
-    </TaskProvider>
+    <Provider store={ store }>
+      <CounterReduxApp />
+    </Provider>
   </React.StrictMode>,
 )
