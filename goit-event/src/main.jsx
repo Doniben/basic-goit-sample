@@ -12,11 +12,13 @@ import { TaskProvider } from './6.-useReducer/context/TaskProvider'
 import { CounterReduxApp } from './CounterReduxApp'
 import { Provider } from 'react-redux'
 import { store } from './store'
+import { PokemonApp } from './7.-Thunks'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={ store }>
-      <CounterReduxApp />
+      {/* {<CounterReduxApp />} */}
+      <PokemonApp/>
     </Provider>
   </React.StrictMode>,
 )
