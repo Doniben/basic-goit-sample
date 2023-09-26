@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { pokemonThunk } from '../store/slices/pokemonThunk'
 import { CirclesWithBar } from "react-loader-spinner";
+import { selectPokemons } from '../store/selectors';
 
 export const PokemonApp = () => {
   const dispatch = useDispatch()
-  const { pokemons, page, loading } = useSelector(state => state.pokemons)
+  const { pokemons, page, loading } = useSelector(selectPokemons)
   useEffect(() => {
     dispatch( pokemonThunk() )
   }, [dispatch])
