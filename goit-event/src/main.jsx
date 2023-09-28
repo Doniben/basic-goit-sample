@@ -11,15 +11,17 @@ import { TaskApp } from './6.-useReducer/TaskApp'
 import { TaskProvider } from './6.-useReducer/context/TaskProvider'
 import { CounterReduxApp } from './CounterReduxApp'
 import { Provider } from 'react-redux'
-import { store } from './store'
+import { persistor, store } from './store'
 import { PokemonApp } from './7.-Thunks'
 import { PrivateRouteApp } from './8.-PrivateRoute/PrivateRouteApp'
+import { PersistGate } from 'redux-persist/integration/react'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={ store }>
-      {/* {<CounterReduxApp />} */}
-        <PrivateRouteApp />
+      <PersistGate loading={null} persistor={persistor}>
+          <PrivateRouteApp />
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
 )
