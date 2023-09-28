@@ -26,6 +26,11 @@ export const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" to="/dashboard/counter">
+              counter
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link className="nav-link" to="/redirected-page">
               Redirected Page
             </Link>
