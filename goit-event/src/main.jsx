@@ -13,12 +13,13 @@ import { CounterReduxApp } from './CounterReduxApp'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import { PokemonApp } from './7.-Thunks'
+import { PrivateRouteApp } from './8.-PrivateRoute/PrivateRouteApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={ store }>
       {/* {<CounterReduxApp />} */}
-      <PokemonApp/>
+        <PrivateRouteApp />
     </Provider>
   </React.StrictMode>,
 )
